@@ -66,7 +66,7 @@ contract HuiWanUsdtLpHuiWanPool is
                 lastTimeRewardApplicable()
                     .sub(lastUpdateTime)
                     .mul(rewardRate)
-                    .mul(1e18)
+                    .mul(1e9)
                     .div(totalSupply())
             );
     }
@@ -75,7 +75,7 @@ contract HuiWanUsdtLpHuiWanPool is
         return
             balanceOf(account)
                 .mul(rewardPerToken().sub(userRewardPerTokenPaid[account]))
-                .div(1e18)
+                .div(1e9)
                 .add(rewards[account]);
     }
 
